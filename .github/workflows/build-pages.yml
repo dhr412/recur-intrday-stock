@@ -1,4 +1,4 @@
-name: Convert to HTML and deploy to GitHub Pages
+name: Deploy to Pages
 
 on:
   push:
