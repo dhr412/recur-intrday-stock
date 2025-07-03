@@ -1,6 +1,6 @@
 # Intraday Stock Movement Prediction
 
-This repository implements a deep learning pipeline for predicting short-term stock price movement (buy/sell/hold) using an LSTM classifier trained on intraday technical indicators. The model processes time steps of 5-minute interval data and generates actionable predictions for a given stock symbol.
+This repository implements a deep learning pipeline for predicting short-term stock price movement (buy/sell/hold) using an GRU classifier trained on intraday technical indicators. The model processes time steps of 5-minute interval data and generates actionable predictions for a given stock symbol.
 
 ---
 
@@ -8,7 +8,7 @@ This repository implements a deep learning pipeline for predicting short-term st
 
 - Fetches 5-minute intraday price data from Yahoo Finance
 - Computes 20+ standard technical indicators (MACD, RSI, VWAP, etc.)
-- Uses a PReLU-activated LSTM to classify each window of price data into:
+- Uses a PReLU-activated GRU to classify each window of price data into:
   - `Buy` (price expected to rise)
   - `Sell` (price expected to drop)
   - `Hold` (no significant movement)
@@ -29,8 +29,8 @@ The model uses 21 widely accepted technical indicators:
 
 ### Model Architecture
 - Input: sequences of 60 time steps (5-minute candles × 60 = 5 hours)
-- Backbone: 2-layer **LSTM** with `128` hidden units
-- Activation: `PReLU` after LSTM and in classifier
+- Backbone: 2-layer **GRU** with `128` hidden units
+- Activation: `PReLU` after GRU and in classifier
 - Output: `3-class softmax` predicting Buy / Hold / Sell
 - Loss: `CrossEntropyLoss`, optionally class-weighted for imbalance
 
