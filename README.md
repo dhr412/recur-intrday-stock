@@ -1,6 +1,6 @@
 # Intraday Stock Movement Prediction
 
-This repository implements a deep learning pipeline for predicting short-term stock price movement (buy/sell/hold) using an GRU classifier trained on intraday technical indicators. The model processes time steps of 5-minute interval data and generates actionable predictions for a given stock symbol.
+This repository implements a deep learning pipeline for predicting short-term stock price movement (buy/sell/hold) using a GRU classifier trained on intraday technical indicators. The model processes time steps of 5-minute interval data and generates actionable predictions for a given stock symbol.
 
 ---
 
