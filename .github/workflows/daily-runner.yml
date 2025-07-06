@@ -37,13 +37,14 @@ jobs:
               --ExecutePreprocessor.timeout=3600 \
               --output src/quant_recurrent_new.ipynb
           else
-            echo "Outside execution window. Skipping."
+            echo "Outside execution window. Skipping"
           fi
 
       - name: Commit and push new notebook
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add src/quant_recurrent_new.ipynb
-          git commit -m "Add executed quant_recurrent_new notebook"
+          mv src/quant_recurrent_new.ipynb src/quant_recurrent.ipynb
+          git add src/quant_recurrent.ipynb
+          git commit -m "Update notebook with latest data"
           git push
