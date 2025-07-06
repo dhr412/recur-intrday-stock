@@ -32,7 +32,7 @@ The model uses 21 widely accepted technical indicators:
 - Backbone: 2-layer **GRU** with `128` hidden units
 - Activation: `PReLU` after GRU and in classifier
 - Output: `3-class softmax` predicting Buy / Hold / Sell
-- Loss: `CrossEntropyLoss`, optionally class-weighted for imbalance
+- Loss: `CrossEntropyLoss`
 
 ---
 
@@ -41,7 +41,7 @@ The model uses 21 widely accepted technical indicators:
 - Sequence Length: 60
 - Training Horizon: 3 timesteps (15 minutes ahead)
 - Normalization: z-score per feature, per stock
-- Epochs: 32 (adjustable)
+- Epochs: 32
 - Evaluation: Balanced accuracy, classification report, confusion matrix
 
 ---
