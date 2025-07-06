@@ -2,7 +2,7 @@ name: Execute Notebook
 
 on:
   schedule:
-    # Runs at 1 PM ET = 17:00 UTC
+    # 1 PM ET = 17:00 UTC
     - cron: '0 17 * * *'
   workflow_dispatch:
 
