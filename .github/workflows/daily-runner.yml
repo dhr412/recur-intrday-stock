@@ -32,7 +32,7 @@ jobs:
           END_DATE="2025-08-08"
           TODAY=$(date -u +"%Y-%m-%d")
 
-          if [[ "$TODAY" >="$START_DATE" && "$TODAY" <= "$END_DATE" ]]; then
+          if [[ "$TODAY" > "$START_DATE" || "$TODAY" == "$START_DATE" ]] && [[ "$TODAY" < "$END_DATE" || "$TODAY" == "$END_DATE" ]]; then
             jupyter nbconvert --to notebook --execute src/quant_recurrent.ipynb \
               --ExecutePreprocessor.timeout=3600 \
               --output src/quant_recurrent_new.ipynb
