@@ -27,7 +27,7 @@ jobs:
           pip install --upgrade pip
           pip install \
             notebook nbconvert tqdm yfinance pandas numpy matplotlib seaborn \
-            torch scikit-learn
+            torch scikit-learn ipywidgets
 
       - name: Execute notebook to new file if within date range
         run: |
