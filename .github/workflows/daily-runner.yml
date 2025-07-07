@@ -22,9 +22,12 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install Jupyter
+      - name: Install dependencies
         run: |
-          pip install notebook nbconvert
+          pip install --upgrade pip
+          pip install \
+            notebook nbconvert tqdm yfinance pandas numpy matplotlib seaborn \
+            torch scikit-learn
 
       - name: Execute notebook to new file if within date range
         run: |
