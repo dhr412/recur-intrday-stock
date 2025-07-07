@@ -38,7 +38,8 @@ jobs:
           if [[ "$TODAY" > "$START_DATE" || "$TODAY" == "$START_DATE" ]] && [[ "$TODAY" < "$END_DATE" || "$TODAY" == "$END_DATE" ]]; then
             jupyter nbconvert --to notebook --execute src/quant_recurrent.ipynb \
               --ExecutePreprocessor.timeout=3600 \
-              --output src/quant_recurrent_new.ipynb
+              --output quant_recurrent_new.ipynb
+            mv quant_recurrent_new.ipynb src/quant_recurrent_new.ipynb
           else
             echo "Outside execution window. Skipping"
           fi
