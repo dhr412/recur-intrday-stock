@@ -39,7 +39,6 @@ jobs:
             jupyter nbconvert --to notebook --execute src/quant_recurrent.ipynb \
               --ExecutePreprocessor.timeout=3600 \
               --output quant_recurrent_new.ipynb
-            mv quant_recurrent_new.ipynb src/quant_recurrent_new.ipynb
           else
             echo "Outside execution window. Skipping"
           fi
